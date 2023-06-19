@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* ===================== reset ==== */
+html, body, div, iframe, h1, h2, h3, h4, h5, h6, p, a, img, small, dl, dt, dd, ol, ul, li, form, label, table, tr, th, td, article, footer, header, nav, section, figure ,address{margin: 0;padding: 0;border: 0;font-size: 100%; font-style: normal;}
+body{text-align: justify; text-justify: inter-ideograph;}
+input, textarea {margin: 0; resize: none; font-size: 16px; padding: 6px;box-sizing: border-box;}
+ol, ul {list-style: none;}
+table {border-collapse: collapse;border-spacing: 0;}
+a {text-decoration: none;color: inherit;}
+a:focus {outline: none;}
+img {max-width: 100%;height: auto;}
+html {font-family: Helvetica , Arial , 'Hiragino Kaku Gothic ProN' , 'メイリオ' , Meiryo , sans-serif;-webkit-text-size-adjust: 100%;line-height: 1.8;-webkit-font-smoothing: antialiased;}
+.gothic {font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;}
+.mincyo {font-family:'ヒラギノ明朝 Pro W3', 'Hiragino Mincho ProN', '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho', 'HG明朝E', 'ＭＳ Ｐ明朝', 'ＭＳ 明朝', 'MS PMincho', serif;}
+/* ===================== animation ==== */
+.touch--anime{transition: opacity .3s;}
+@media all and (min-width:768px) {.touch--anime:not(.nopacity):hover{opacity: .7;}}
+@media all and (max-width:767px) {.touch--anime:not(.nopacity).touch--start{opacity: .7;}}
+.scroll--anime{transition: all 1s ease .1s;}
+.scroll--anime.fuwa{opacity:0; transform: scale(.95);}
+.scroll--anime.fuwa.scroll--start{opacity:1;transform: scale(1)}
+.scroll--anime.fuwa-up{transform: translateY(30px);opacity:0;}
+.scroll--anime.fuwa-up.scroll--start{transform: translateY(0px);opacity:1;}
+.scroll--anime.fuwa-down{transform: translateY(-30px);opacity:0;}
+.scroll--anime.fuwa-down.scroll--start{transform: translateY(0px);opacity:1;}
+.scroll--anime.fuwa-right{transform: translateX(-30px);opacity:0;}
+.scroll--anime.fuwa-right.scroll--start{transform: translateX(0px);opacity:1;}
+.scroll--anime.fuwa-left{transform: translateX(30px);opacity:0;}
+.scroll--anime.fuwa-left.scroll--start{transform: translateX(0px);opacity:1;}
+.scroll--filter{position: relative;overflow: hidden;}
+.scroll--filter::before{content: '';width: 100%;height: 100%;background: #fff;position: absolute;left:0;top:0;transition: all 1s;}
+.scroll--filter.filter-left.scroll--start::before{left:-100%;}
+.scroll--filter.filter-right.scroll--start::before{left: 100%;}
+.scroll--filter.filter-up.scroll--start::before{top:-100%;}
+.scroll--filter.filter-down.scroll--start::before{top: 100%;}
+/* ===================== wp ==== */
+.wp-editor h1 {
+    font-size: 175%;
+}
+.wp-editor h2 {
+    font-size: 160%;
+}
+.wp-editor h3 {
+    font-size: 145%;
+}
+.wp-editor h4 {
+    font-size: 130%;
+}
+.wp-editor h5 {
+    font-size: 115%;
+}
+.wp-editor h1, .wp-editor h2, .wp-editor h3, .wp-editor h4, .wp-editor h5 {
+    margin: 30px 0 10px;
+}
+.wp-editor img {
+    max-width: 100%;
+    height: auto;
+}
+.wp-editor hr {
+    margin: 20px 0;
+}
+.wp-editor .alignleft {
+    float: left;
+    margin: 0 10px 10px 0;
+}
+.wp-editor .alignright {
+    float: right;
+    margin: 0 0 10px 10px;
+}
+.wp-editor .aligncenter {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.wp-editor strong {
+    font-weight: bold;
+}
+.wp-editor em {
+    font-style: italic;
+}
+.wp-editor del {
+    text-decoration: line-through;
+}
+.wp-editor blockquote {
+    display: inline-block;
+    padding: 0 1em;
+    position: relative;
+    margin: 0;
+}
+.wp-editor blockquote:before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.wp-editor blockquote:after {
+    content: '"';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.wp-editor a {
+    color: #00F;
+    text-decoration: underline;
+    transition: all .2s;
+}
+.wp-editor a:hover {
+    color: red;
+}
+.wp-editor p {
+    margin: 0 0 20px 0;
+}
+.wp-editor ul {
+    list-style: disc;
+    padding: 0 0 0 1.5em;
+    margin: 0 0 20px 0;
+}
+.wp-editor ol {
+    list-style: decimal;
+    padding: 0 0 0 1.5em;
+    margin: 0 0 20px 0;
+}
+.wp-editor .wp-block-table{
+    margin: 20px 0;
+    display: block;
+}
+.wp-editor table {
+    width: 100% !important;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    table-layout: fixed !important;
+    resize: none;
+    margin: 15px auto;
+}
+.wp-editor table th {
+    box-sizing: border-box;
+    padding: 6px;
+    border: solid 1px #999;
+    background: #f5f5f5;
+    width: auto !important;
+}
+.wp-editor table td {
+    box-sizing: border-box;
+    padding: 6px;
+    border: solid 1px #999;
+    width: auto !important;
+}
+.wp-editor figcaption{
+    text-align: center;
+    font-size: 88%;
+    color: #555;
+    margin: -10px 0 0;
+}
+@media all and (max-width:767px) {
+    .wp-editor .alignleft {
+        float: none;
+        display: block;
+        margin: 0 0 10px;
+    }
+    .wp-editor .alignright {
+        float: none;
+        display: block;
+        margin: 0 0 10px;
+    }
+}

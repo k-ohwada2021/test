@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+html[lang="ja"] {
+	margin:0 !important;
+}
+body{
+	font-size: 3.733vw;
+}
+.pc-only {
+	display: none !important;
+}
+#wpadminbar{
+	display: none !important;
+}
+@media all and (min-width:501px){
+    body {
+    font-size: 18px;
+    }
+}
+/* == parts ============================================== */
